@@ -8,15 +8,14 @@ transpile all the code.
 
 When you run `grunt`, it will:
 
-* Compiles [pug]() into HTML. You can find all the pug files in the `pug/`
-folder.
+* Compiles [pug](https://pugjs.org/api/getting-started.html) into HTML. You can
+find all the pug files in the `pug/` folder.
 
-* Compiles [less]() into CSS. You can find all the less files in the `less/`
+* Compiles [less](http://lesscss.org/) into CSS. You can find all the less files
+in the `less/` folder.
 
-folder.
-
-* Compiles [coffeescript]() into JavaScript. You can find all the coffeescript
-files in the `coffee/` folder.
+* Compiles [coffeescript](http://coffeescript.org/) into JavaScript. You can
+find all the coffeescript files in the `coffee/` folder.
 
 * Watch the directory for any changes and compile them
 
