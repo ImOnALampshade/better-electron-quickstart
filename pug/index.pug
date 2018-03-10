@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Hello, world!
+    link(rel='stylesheet' href='../css/style.css')
+  body
+    h1 Hello, World!
+
+    | We are using Node.js #[script document.write(process.versions.node)]
+    | Chromium #[script document.write(process.versions.chrome)]
+    | and Electron #[script document.write(process.versions.electron)]
+
+    script.
+      require('../js/render.js')
