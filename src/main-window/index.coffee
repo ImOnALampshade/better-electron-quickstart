@@ -1,9 +1,5 @@
 JSXDom = require '../jsx-dom'
 
-# We are using Node.js #[script document.write(process.versions.node)]
-# Chromium #[script document.write(process.versions.chrome)]
-# and Electron #[script document.write(process.versions.electron)]
-
 class VersionNumberView extends JSXDom.View
   constructor: (app) ->
     super(app)
@@ -19,12 +15,12 @@ class VersionNumberView extends JSXDom.View
 
     return elem
 
-class MyApp extends JSXDom.App
+class ExampleApp extends JSXDom.App
   constructor: (opts) ->
     super()
 
     @addView
       view: new VersionNumberView
 
-app = new MyApp
+app = new ExampleApp
 app.show(document.body)
