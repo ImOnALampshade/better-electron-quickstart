@@ -6,13 +6,13 @@ url = require 'url'
 
 mainWindow = null
 
-app.on 'ready', ->
+createWindow =  ->
   mainWindow = new BrowserWindow
     width: 800
     height: 600
 
   mainUrl = url.format
-    pathname: path.join(__dirname, '..', 'html', 'index.html')
+    pathname: path.join(__dirname, 'index.html')
     protocol: 'file:'
     slashes: true
 
@@ -21,10 +21,11 @@ app.on 'ready', ->
   mainWindow.on 'closed', ->
     mainWindow = null
 
+app.on 'ready', createWindow
+
 app.on 'window-all-closed', ->
   if process.platform isnt 'darwin'
     app.quit()
-
 
 app.on 'activate', ->
   if mainWindow is null

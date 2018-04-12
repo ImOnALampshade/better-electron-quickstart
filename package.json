@@ -2,10 +2,10 @@
   "name": "better-electron-quickstart",
   "version": "1.0.0",
   "description": "Arguably a better quickstart repo for electron ",
-  "main": "js/main.js",
+  "main": "bin/main.js",
   "scripts": {
     "compile": "grunt newer:coffee newer:less newer:pug",
-    "start": "electron bin/js/main.js"
+    "start": "electron bin/main.js"
   },
   "repository": "https://github.com/ImOnALampshade/better-electron-quickstart",
   "keywords": [

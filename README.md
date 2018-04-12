@@ -8,21 +8,18 @@ transpile all the code.
 
 When you run `grunt`, it will:
 
-* Compiles [pug](https://pugjs.org/api/getting-started.html) into HTML. You can
-find all the pug files in the `pug/` folder.
+* Compiles [pug](https://pugjs.org/api/getting-started.html) into HTML.
 
-* Compiles [less](http://lesscss.org/) into CSS. You can find all the less files
-in the `less/` folder.
+* Compiles [less](http://lesscss.org/) into CSS.
 
-* Compiles [coffeescript](http://coffeescript.org/) into JavaScript. You can
-find all the coffeescript files in the `coffee/` folder.
+* Compiles [coffeescript](http://coffeescript.org/) into JavaScript.
 
-* Watch the directory for any changes and compile them
+* Watch the directory for any changes and compile them.
 
-So, just run `grunt` and continue your developement in the `pug`, `less`, and
-`coffee` directories. There is also a `compile` script in `package.json` that
-**just** run the compilation steps without watching the directory. You can use
-this with `npm run compile`.
+So, just run `grunt` and continue your developement in the `src` directory.
+There is also a `compile` script in `package.json` that **just** run the 
+compilation steps without watching the directory. You can use this with 
+`npm run compile`.
 
 # FAQ
 
@@ -37,4 +34,13 @@ them.
 * **You just made these questions up based on what you thought people would ask,
 didn't you?** You shut your mouth.
 
-# [License](LICENSE)
+# JSX
+
+You can use JSX in coffeescript, and it will be converted directly into DOM
+elements (Which vastly reduces the typical amount of resource usage you see from
+using frameworks). This is done through Babel. All your render modules that use
+this must include `jsx-dom` (which is just a file in this repo):
+
+    JSXDom = require './jsx-dom'
+
+# [MIT Licensed](LICENSE)

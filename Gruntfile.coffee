@@ -12,9 +12,9 @@ module.exports = (grunt) ->
 
         expand: true
         flatten: false
-        cwd: 'coffee/'
+        cwd: 'src/'
         src: ['**/*.coffee']
-        dest: 'bin/js'
+        dest: 'bin/'
         ext: '.js'
 
     less:
@@ -26,29 +26,29 @@ module.exports = (grunt) ->
 
         expand: true
         flatten: false
-        cwd: 'less/'
+        cwd: 'src/'
         src: ['**/*.less']
-        dest: 'bin/css/'
+        dest: 'bin/'
         ext: '.css'
 
     pug:
       all:
         expand: true
         flatten: false
-        cwd: 'pug/'
+        cwd: 'src/'
         src: ['**/*.pug']
-        dest: 'bin/html/'
+        dest: 'bin/'
         ext: '.html'
 
     watch:
       less:
-        files: ['less/**/*.less']
+        files: ['src/**/*.less']
         tasks: ['newer:less:all']
       coffee:
-        files: ['coffee/**/*.coffee']
+        files: ['src/**/*.coffee']
         tasks: ['newer:coffee:all']
       pug:
-        files: ['pug/**/*.pug']
+        files: ['src/**/*.pug']
         tasks: ['newer:pug:all']
 
   grunt.registerTask('default', ['newer:coffee', 'newer:less', 'newer:pug', 'watch'])
