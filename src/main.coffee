@@ -12,7 +12,7 @@ createWindow =  ->
     height: 600
 
   mainUrl = url.format
-    pathname: path.join(__dirname, 'index.html')
+    pathname: path.join(__dirname, 'main-window', 'index.html')
     protocol: 'file:'
     slashes: true
 

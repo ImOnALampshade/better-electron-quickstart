@@ -14,7 +14,7 @@ module.exports = (grunt) ->
         flatten: false
         cwd: 'src/'
         src: ['**/*.coffee']
-        dest: 'bin/'
+        dest: 'bin/.int/'
         ext: '.js'
 
     less:
@@ -40,15 +40,32 @@ module.exports = (grunt) ->
         dest: 'bin/'
         ext: '.html'
 
+    babel:
+      all:
+        options:
+          plugins: [
+            ['transform-react-jsx',
+            {
+              pragma: 'JSXDom.createElement'
+            }]
+          ]
+
+        expand: true
+        flatten: false
+        cwd: 'bin/.int/'
+        src: ['**/*.js']
+        dest: 'bin/'
+        ext: '.js'
+
     watch:
       less:
         files: ['src/**/*.less']
-        tasks: ['newer:less:all']
+        tasks: ['less:all']
       coffee:
         files: ['src/**/*.coffee']
-        tasks: ['newer:coffee:all']
+        tasks: ['coffee:all', 'babel:all']
       pug:
         files: ['src/**/*.pug']
-        tasks: ['newer:pug:all']
+        tasks: ['pug:all']
 
-  grunt.registerTask('default', ['newer:coffee', 'newer:less', 'newer:pug', 'watch'])
+  grunt.registerTask('default', ['coffee', 'babel', 'less', 'pug', 'watch'])
