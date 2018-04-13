@@ -9,7 +9,9 @@ class VersionNumberView extends JSXDom.View
       <div class='version-container'>
         <h1>Hello world!</h1>
         <p>
-          We are using {process.versions.node}, Chromium {process.versions.chrome}, and Electron {process.versions.electron}
+          We are using {process.versions.node}, 
+          {' '}Chromium {process.versions.chrome},
+          {' '}and Electron {process.versions.electron}
         </p>
       </div>
 
